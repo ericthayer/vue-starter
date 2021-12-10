@@ -1,0 +1,30 @@
+:root {
+  --content-wrap--bg-color: #999;
+  --color-grey: #676767;
+  --color-grey-light: #e7e7e7;
+  --color-grey-medium: #999;
+  --color-grey-dark: #333;
+  --color-brand-grey: #53565a;
+  --color-brand-grey-dark: #403c3d;
+  --color-brand-green: #78d64b;
+  --color-brand-green-faded: #91d6ac;
+  --color-brand-green-dark: #007377;
+}
+
+.fade-enter-active {
+  // transition: all .3s ease;
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.fade-leave-active {
+  transition: none;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+svg {
+  fill: currentColor;
+};

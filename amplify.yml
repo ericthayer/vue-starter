@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install
+    build:
+      commands:
+        - npm run build
+        - npx cypress install
+        - mkdir dist/test_artifacts
+        - npm run test:e2e:headless
+        - touch .env
+        - echo "VUE_APP_API_URI=$API_URI" >> .env
+        - echo "VUE_APP_API_KEY=$API_KEY" >> .env
+        - cat .env
+  artifacts:
+    baseDirectory: dist
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
